@@ -1,0 +1,51 @@
+/* Import Tailwind */
+@import "tailwindcss";
+
+/* Import Satoshi font */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+    font-family: 'Satoshi', sans-serif;
+  }
+}
+
+/* Cross Line Animation */
+@keyframes cross-line {
+  0% {
+    transform: translateX(-200%) skewX(-20deg);
+  }
+  99% {
+    transform: translateX(300%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(-200%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-cross-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 1) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: cross-line 1.5s linear infinite;
+}
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
