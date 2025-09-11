@@ -80,7 +80,8 @@ export default function PerfectForSection() {
           style={{ originY: 0 }}
         ></motion.div>
 
-        <div className="grid grid-cols-2 gap-x-8 md:gap-x-16 lg:gap-x-24 relative z-10">
+        {/* The issue is the cards are too wide on mobile and the text is forced to not wrap */}
+        <div className="grid grid-cols-2 gap-x-4 md:gap-x-16 lg:gap-x-24 relative z-10">
           {/* Left Column (The "Not For" Path) */}
           <motion.div
             className="flex flex-col items-end space-y-12"
@@ -90,18 +91,18 @@ export default function PerfectForSection() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={itemVariants} className="text-right -mr-4 md:-mr-8">
-              <span className="inline-block px-4 py-2 bg-red-100 text-red-700 font-semibold rounded-full shadow-sm text-sm whitespace-nowrap">
+              <span className="inline-block px-4 py-2 bg-red-100 text-red-700 font-semibold rounded-full shadow-sm text-sm">
                 Not Your Path
               </span>
             </motion.div>
-            
+
             {notForItems.map((item, index) => (
-              <motion.div key={`not-${index}`} variants={itemVariants} className="relative group w-full max-w-xs sm:max-w-sm">
-                <div className="relative bg-red-50 border-2 border-red-300 rounded-xl p-4 shadow-md flex items-center space-x-3 transition-transform duration-300 hover:scale-105 group-hover:shadow-lg">
+              <motion.div key={`not-${index}`} variants={itemVariants} className="relative group w-full max-w-[175px] sm:max-w-xs">
+                <div className="relative bg-red-50 border-2 border-red-300 rounded-xl p-3 shadow-md flex items-center space-x-3 transition-transform duration-300 hover:scale-105 group-hover:shadow-lg">
                   <FaTimesCircle className="text-red-500 text-2xl flex-shrink-0" />
-                  <p className="text-gray-800 font-medium text-left">{item.text}</p>
+                  <p className="text-gray-800 font-medium text-left text-xs sm:text-sm md:text-base">{item.text}</p>
                 </div>
-                <div className="absolute top-1/2 right-[-2.5rem] md:right-[-4.5rem] transform -translate-y-1/2 bg-red-500 rounded-full p-2 text-white shadow-lg z-20">
+                <div className="absolute top-1/2 right-[-2rem] md:right-[-4.5rem] transform -translate-y-1/2 bg-red-500 rounded-full p-2 text-white shadow-lg z-20">
                   <FaTimesCircle className="text-xl" />
                 </div>
               </motion.div>
@@ -117,18 +118,18 @@ export default function PerfectForSection() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={itemVariants} className="text-left -ml-4 md:-ml-8">
-              <span className="inline-block px-4 py-2 bg-green-100 text-green-700 font-semibold rounded-full shadow-sm text-sm whitespace-nowrap">
+              <span className="inline-block px-4 py-2 bg-green-100 text-green-700 font-semibold rounded-full shadow-sm text-sm">
                 Your Ideal Path
               </span>
             </motion.div>
 
             {perfectForItems.map((item, index) => (
-              <motion.div key={`perfect-${index}`} variants={itemVariants} className="relative group w-full max-w-xs sm:max-w-sm">
-                <div className="relative bg-green-50 border-2 border-green-300 rounded-xl p-4 shadow-md flex items-center space-x-3 transition-transform duration-300 hover:scale-105 group-hover:shadow-lg">
+              <motion.div key={`perfect-${index}`} variants={itemVariants} className="relative group w-full max-w-[175px] sm:max-w-xs">
+                <div className="relative bg-green-50 border-2 border-green-300 rounded-xl p-3 shadow-md flex items-center space-x-3 transition-transform duration-300 hover:scale-105 group-hover:shadow-lg">
                   <FaCheckCircle className="text-green-500 text-2xl flex-shrink-0" />
-                  <p className="text-gray-800 font-medium text-left">{item.text}</p>
+                  <p className="text-gray-800 font-medium text-left text-xs sm:text-sm md:text-base">{item.text}</p>
                 </div>
-                <div className="absolute top-1/2 left-[-2.5rem] md:left-[-4.5rem] transform -translate-y-1/2 bg-green-500 rounded-full p-2 text-white shadow-lg z-20">
+                <div className="absolute top-1/2 left-[-2rem] md:left-[-4.5rem] transform -translate-y-1/2 bg-green-500 rounded-full p-2 text-white shadow-lg z-20">
                   <FaCheckCircle className="text-xl" />
                 </div>
               </motion.div>
