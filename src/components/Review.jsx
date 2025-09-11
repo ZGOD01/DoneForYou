@@ -22,8 +22,8 @@ const AnimatedNumber = ({ value, duration = 2 }) => {
 
 const Review = () => {
   return (
-    <div className="w-full flex justify-center bg-black py-15">
-      <div className="flex items-center gap-2 px-4 py-2 rounded-full shadow-md">
+    <div className="w-full flex justify-center bg-white py-12">
+      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full shadow-md">
         {/* Avatar group */}
         <div className="flex -space-x-2">
           <img
@@ -49,7 +49,7 @@ const Review = () => {
         </div>
 
         {/* Review Text */}
-        <div className="flex items-center gap-1 text-sm text-gray-200">
+        <div className="flex items-center gap-1 text-sm text-black">
           <Star
             className="text-yellow-400 fill-yellow-400"
             size={16}
@@ -65,6 +65,5 @@ const Review = () => {
     </div>
   );
 };
-
 
 export default Review;

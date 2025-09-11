@@ -53,7 +53,7 @@ export default function QASection() {
   };
 
   return (
-    <section className="py-20 bg-black text-white">
+    <section className="py-20 bg-white text-black">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
         {/* Left side heading */}
         <div className="text-left">
@@ -61,10 +61,10 @@ export default function QASection() {
             We simulated what questions <br />
             you need answering
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-700 text-lg">
             Explore quick solutions to common questions. <br />
             Need more? Feel free to contact our{" "}
-            <a href="#" className="underline">
+            <a href="#" className="underline text-blue-600">
               support team
             </a>.
           </p>
@@ -73,10 +73,13 @@ export default function QASection() {
         {/* Right side accordion */}
         <div className="space-y-1">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-white/20">
+            <div
+              key={index}
+              className="border border-black/20 rounded-lg overflow-hidden"
+            >
               <button
                 onClick={() => toggle(index)}
-                className="w-full flex justify-between items-center px-6 py-5 text-left text-base font-normal hover:bg-white/5 transition"
+                className="w-full flex justify-between items-center px-6 py-5 text-left text-base font-normal hover:bg-black/5 transition"
               >
                 {faq.question}
                 <motion.span
@@ -97,7 +100,7 @@ export default function QASection() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-5 text-gray-300 text-sm leading-relaxed">
+                    <div className="px-6 pb-5 text-gray-800 text-sm leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -116,9 +119,9 @@ export default function QASection() {
         viewport={{ once: true, amount: 0.3 }}
         variants={boxVariants}
       >
-        <div className="rounded-xl border border-white/20 bg-white/5 backdrop-blur-md p-10 text-center shadow-lg">
+        <div className="rounded-xl border border-black/20 bg-gray-50 p-10 text-center shadow-lg">
           <h3 className="text-2xl font-semibold mb-8">Why Coaches Choose Us</h3>
-          <ul className="space-y-4 text-gray-300 text-lg">
+          <ul className="space-y-4 text-gray-800 text-lg">
             {reasons.map((reason, idx) => (
               <motion.li
                 key={idx}

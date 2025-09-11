@@ -4,8 +4,12 @@ import logo from "../assets/scale100million logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-black to-[#0a0f2c] text-white pt-14 pb-6">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 mt-6">
+   <footer className="relative bg-white text-black pt-14 pb-6 overflow-hidden">
+
+      {/* Blue Glow */}
+      <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-blue-400/30 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 mt-6">
         {/* Left - Logo + Contact Us */}
         <div className="flex flex-col items-center md:items-start space-y-6">
           {/* Logo */}
@@ -13,13 +17,13 @@ export default function Footer() {
             src={logo}
             alt="Scale100Million Logo"
             className="h-6 w-auto"
-          />
+          />  
 
           {/* Contact Us Heading */}
           <h3 className="text-lg font-semibold">Contact Us</h3>
 
           {/* Contact Info */}
-          <div className="flex flex-col space-y-3 text-sm text-gray-300">
+          <div className="flex flex-col space-y-3 text-sm text-gray-700">
             <a
               href="mailto:scale100million@gmail.com"
               className="flex items-center gap-3 hover:underline"
@@ -49,7 +53,7 @@ export default function Footer() {
         {/* Right - Quick Links */}
         <div className="flex flex-col items-center md:items-end w-full">
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul className="flex flex-col items-start md:items-end space-y-2 text-sm text-gray-300">
+          <ul className="flex flex-col items-start md:items-end space-y-2 text-sm text-gray-700">
             <li>
               <Link to="/terms" className="hover:underline block">
                 Terms & Conditions
@@ -75,16 +79,15 @@ export default function Footer() {
                 Contact Us
               </Link>
             </li>
-
           </ul>
         </div>
       </div>
 
       {/* Bottom Row */}
-      <div className="mt-12 text-center text-xs text-gray-400">
+      <div className="mt-12 text-center text-xs text-gray-500">
         Mon – Sun, 10:00 AM – 10:00 PM
       </div>
-      <div className="mt-2 text-center text-xs text-gray-500">
+      <div className="mt-2 text-center text-xs text-gray-400">
         © 2025 Scale100Million.com. All rights reserved.
       </div>
     </footer>

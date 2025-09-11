@@ -1,63 +1,36 @@
-import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import SampleVideo from "../assets/moon.mp4";
 import CallToActionButton from "./CallToActionButton";
+import KeyBenefits from "./KeyBenefits";
 
 export default function Hero() {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 1.25;
-    }
-  }, []);
-
   const blurLeftToRight = (delay = 0) => ({
     hidden: {
       opacity: 0,
       filter: "blur(12px)",
-      clipPath: "inset(0 100% 0 0)"
+      clipPath: "inset(0 100% 0 0)",
     },
     visible: {
       opacity: 1,
       filter: "blur(0px)",
       clipPath: "inset(0 0% 0 0)",
-      transition: { duration: 1.2, ease: "easeOut", delay }
-    }
+      transition: { duration: 1.2, ease: "easeOut", delay },
+    },
   });
 
   return (
-    <div className="relative bg-black min-h-screen flex items-start justify-center overflow-hidden">
-      <motion.video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        initial={{ scale: 1.05 }}
-        animate={{ scale: 1 }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
-      >
-        <source src={SampleVideo} type="video/mp4" />
-      </motion.video>
-
-      <div className="absolute top-0 left-0 w-full h-full bg-black/60" />
-
-      <div className="relative z-10 px-6 text-center max-w-4xl pt-2 -mt-2">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-white leading-snug tracking-tight mx-auto">
+    <div className="relative z-[999] bg-white min-h-[80vh] flex items-start justify-center overflow-hidden">
+      {/* 📱 Push down on mobile */}
+      <div className="relative px-6 text-center max-w-5xl mt-1 md:mt-0">
+        {/* Title */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-snug tracking-tight mx-auto">
           <motion.span
             variants={blurLeftToRight(0)}
             initial="hidden"
             animate="visible"
             className="block"
           >
-            The Secret AI Automation System
+            Scale Your Coaching Business To{" "}
+            <span className="bg-yellow-100 px-1">5</span>
           </motion.span>
           <motion.span
             variants={blurLeftToRight(0.4)}
@@ -65,41 +38,44 @@ export default function Hero() {
             animate="visible"
             className="block"
           >
-            Top 1% Fat Loss Coaches Use
+            <span className="bg-yellow-100 px-1">
+              Lakhs/Month PROFIT
+            </span>{" "}
+            Using Army Of
           </motion.span>
           <motion.span
             variants={blurLeftToRight(0.8)}
             initial="hidden"
             animate="visible"
-            className="block"
+            className="block underline underline-offset-4"
           >
-            to Scale from 2L/month to 10L/month{" "}
-            <span className="text-white">
-              Without the DM Grind, Referrals, or Daily Reels
-            </span>
+            A.I. Agents.
           </motion.span>
         </h1>
 
+        {/* Subheading */}
         <motion.h2
           variants={blurLeftToRight(1.2)}
           initial="hidden"
           animate="visible"
-          className="mt-5 text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-300 leading-snug mx-auto"
+          className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-700 leading-snug mx-auto"
         >
-          This Proven AI-Powered, Done-For-You Client Acquisition System brings
-          you ready-to-invest clients on autopilot with no burnout, no chasing
-          leads, 100% Autopilot.
+          AI-Powered, Done-For-You Client Acquisition System That
+          brings Ready-to-Invest Clients On 100% Autopilot.
         </motion.h2>
 
-        {/* Supporting Paragraph */}
+        {/* Call to Action Button */}
         <motion.div
           variants={blurLeftToRight(1.6)}
           initial="hidden"
           animate="visible"
-          className="mt-6 text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed tracking-wide mx-auto"
+          className="mt-6"
         >
           <CallToActionButton />
         </motion.div>
+
+        {/* ✅ KeyBenefits section */}
+        <KeyBenefits />
       </div>
     </div>
   );

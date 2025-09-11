@@ -13,13 +13,13 @@ export default function BeforeAfterMarquee() {
   ];
 
   return (
-    <section className="bg-black py-16">
+    <section className="bg-white py-16">
       <div className="text-center mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold">
+        <h2 className="text-2xl md:text-3xl font-bold text-black">
           Not 1 or 2, it’s <span className="text-pink-600">998+ women</span> who
           have seen the results.
         </h2>
-        <p className="mt-2 text-white text-sm md:text-base">
+        <p className="mt-2 text-black text-sm md:text-base">
           Yes, This helped <span className="font-semibold">998+ ladies</span>{" "}
           struggling with weight loss, PCOD, PCOS, bloating, body toning etc.
         </p>

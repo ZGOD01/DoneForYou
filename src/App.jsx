@@ -1,10 +1,8 @@
 import './App.css'
 import BeforeAfterMarquee from './components/BeforeAfterMarquee';
 import Bonuses from './components/Bonuses';
-import CallToActionButton from './components/CallToActionButton';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
-import KeyBenefits from './components/KeyBenefits';
 import PainTruthSection from './components/PainTruthSection';
 import PerfectForSection from './components/PerfectForSection';
 import ProcessFlow from './components/ProcessFlow';
@@ -26,37 +24,42 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Routes>
-      {/* Main Landing Page */}
-      <Route
-        path="/"
-        element={
-          <>
-            <TopMarquee />
-            <Review />
-            <Hero />
-            <KeyBenefits />
-            <VideoSection />
-            <CallToActionButton />
-            <TestimonialsMarquee />
-            <BeforeAfterMarquee />
-            <PerfectForSection />
-            <PainTruthSection />
-            <ProcessFlow />
-            <Bonuses />
-            <QASection />
-            <Footer />
-          </>
-        }
-      />
+    <div className="min-h-screen flex flex-col bg-white">
+      {/* Main content area grows to push footer down */}
+      <main className="flex-grow">
+        <Routes>
+          {/* Main Landing Page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <TopMarquee />
+                <Review />
+                <Hero />
+                <VideoSection />
+                <TestimonialsMarquee />
+                <BeforeAfterMarquee />
+                <PerfectForSection />
+                <PainTruthSection />
+                <ProcessFlow />
+                <Bonuses />
+                <QASection />
+              </>
+            }
+          />
 
-      {/* Static Pages */}
-      <Route path="/terms" element={<Terms />} />
-      <Route path="/refund" element={<Refund />} />
-      <Route path="/privacy" element={<Privacy />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
+          {/* Static Pages */}
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/refund" element={<Refund />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+
+      {/* Footer always at bottom */}
+      <Footer />
+    </div>
   );
 }
 

@@ -6,34 +6,34 @@ import { motion } from "framer-motion";
 export default function Bonuses() {
   const bonuses = [
     {
-      icon: <Star className="w-6 h-6 text-yellow-300" />,
+      icon: <Star className="w-6 h-6 text-yellow-500" />,
       title: "Sales Script Vault",
       description: "Proven high-ticket closing scripts",
     },
     {
-      icon: <MessageCircle className="w-6 h-6 text-cyan-300" />,
+      icon: <MessageCircle className="w-6 h-6 text-cyan-500" />,
       title: "Follow-up Message Library",
       description: "Plug-and-play templates for WhatsApp/Email",
     },
     {
-      icon: <Clock className="w-6 h-6 text-green-300" />,
+      icon: <Clock className="w-6 h-6 text-green-500" />,
       title: "90-Day Accountability Support",
       description: "We don’t leave until you hit ₹1L new sales",
     },
     {
-      icon: <Gift className="w-6 h-6 text-orange-300" />,
+      icon: <Gift className="w-6 h-6 text-orange-500" />,
       title: "Referral Waiver",
       description: "Bring 1 qualified coach during setup → 50% balance waived",
     },
   ];
 
   return (
-    <section className="relative py-16 bg-black text-white overflow-hidden">
+    <section className="relative py-16 bg-white text-black overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
           Bonuses You Receive
         </h2>
-        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           These bonuses are carefully curated to help you scale faster and smarter.
         </p>
 
@@ -49,16 +49,16 @@ export default function Bonuses() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative bg-gray-900 border border-gray-700 rounded-2xl p-6 flex flex-col justify-between hover:bg-gray-800 transition-all duration-300 shadow-md cursor-pointer"
+              className="relative bg-gray-100 border border-gray-300 rounded-2xl p-6 flex flex-col justify-between hover:bg-gray-200 transition-all duration-300 shadow-md cursor-pointer"
             >
               {/* Accent geometric shape */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-gray-800 rounded-lg rotate-12 opacity-50"></div>
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-gray-200 rounded-lg rotate-12 opacity-50"></div>
 
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-gray-800 p-3 rounded-full">{bonus.icon}</div>
+                <div className="bg-gray-200 p-3 rounded-full">{bonus.icon}</div>
                 <h3 className="text-xl font-semibold">{bonus.title}</h3>
               </div>
-              <p className="text-gray-300">{bonus.description}</p>
+              <p className="text-gray-700">{bonus.description}</p>
             </motion.div>
           ))}
         </motion.div>
