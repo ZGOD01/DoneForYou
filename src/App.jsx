@@ -9,6 +9,7 @@ import ProcessFlow from './components/ProcessFlow';
 import QASection from './components/QASection';
 import Review from './components/Review';
 import TestimonialsMarquee from './components/TestimonialsSection';
+import VideoSection from './components/VideoSection';
 
 // Import Router
 import { Routes, Route } from "react-router-dom";
@@ -32,6 +33,7 @@ function App() {
               <>
                 <Review />
                 <Hero />
+                <VideoSection />
                 <TestimonialsMarquee />
                 <BeforeAfterMarquee />
                 <PerfectForSection />

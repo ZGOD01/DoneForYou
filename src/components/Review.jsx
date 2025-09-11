@@ -22,7 +22,7 @@ const AnimatedNumber = ({ value, duration = 2 }) => {
 
 const Review = () => {
   return (
-    <div className="w-full flex justify-center bg-white py-12">
+    <div className="w-full flex justify-center bg-white py-3">
       <div className="flex items-center gap-2 px-3 py-1.5 rounded-full shadow-md">
         {/* Avatar group */}
         <div className="flex -space-x-2">

@@ -3,7 +3,8 @@ import CallToActionButton from "./CallToActionButton";
 export default function VideoSection() {
   return (
     <>
-      <section className="bg-white py-16 px-4 flex flex-col items-center">
+      {/* Remove extra top margin, keep only tiny gap */}
+      <section className="bg-white px-4 flex flex-col items-center mt-1 sm:mt-3">
         <div className="w-full max-w-3xl aspect-video">
           <iframe
             className="w-full h-full rounded-lg shadow-lg"
@@ -14,7 +15,7 @@ export default function VideoSection() {
             allowFullScreen
           ></iframe>
         </div>
-        <div className="mt-6">
+        <div className="mt-2 sm:mt-3">
           <CallToActionButton />
         </div>
       </section>

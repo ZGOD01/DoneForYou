@@ -22,34 +22,31 @@ export default function Hero() {
       {/* 📱 Push down on mobile */}
       <div className="relative px-6 text-center max-w-5xl mt-1 md:mt-0">
         {/* Title */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-snug tracking-tight mx-auto">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug tracking-tight mx-auto">
           <motion.span
             variants={blurLeftToRight(0)}
             initial="hidden"
             animate="visible"
-            className="block"
+            className="block text-black"
           >
-            Scale Your Coaching Business To{" "}
-            <span className="bg-yellow-100 px-1">5</span>
+            Scale Your <span className="text-blue-600">Fat Loss</span> Coaching Business
           </motion.span>
           <motion.span
             variants={blurLeftToRight(0.4)}
             initial="hidden"
             animate="visible"
-            className="block"
+            className="block text-black"
           >
-            <span className="bg-yellow-100 px-1">
-              Lakhs/Month PROFIT
-            </span>{" "}
-            Using Army Of
+            From <span className="text-blue-600">1L</span> To{" "}
+            <span className="text-blue-600">10L/Month PROFIT</span>
           </motion.span>
           <motion.span
             variants={blurLeftToRight(0.8)}
             initial="hidden"
             animate="visible"
-            className="block underline underline-offset-4"
+            className="block underline underline-offset-4 text-blue-600"
           >
-            A.I. Agents.
+            Using Army Of A.I. Agents.
           </motion.span>
         </h1>
 
@@ -63,16 +60,6 @@ export default function Hero() {
           AI-Powered, Done-For-You Client Acquisition System That
           brings Ready-to-Invest Clients On 100% Autopilot.
         </motion.h2>
-
-        {/* Call to Action Button */}
-        <motion.div
-          variants={blurLeftToRight(1.6)}
-          initial="hidden"
-          animate="visible"
-          className="mt-6"
-        >
-          <CallToActionButton />
-        </motion.div>
 
         {/* ✅ KeyBenefits section */}
         <KeyBenefits />
