@@ -37,8 +37,12 @@ export default function Hero() {
             animate="visible"
             className="block text-black"
           >
-            From <span className="text-blue-600">1L</span> To{" "}
-            <span className="text-blue-600">10L/Month PROFIT</span>
+            From{" "}
+            <span className="bg-yellow-100 px-2"> {/* This is the new highlighting span */}
+              <span className="text-blue-600">1L</span>{" "}
+              <span className="text-blue-600">To</span>{" "}
+              <span className="text-blue-600">10L/Month PROFIT</span>
+            </span>
           </motion.span>
           <motion.span
             variants={blurLeftToRight(0.8)}
@@ -55,7 +59,7 @@ export default function Hero() {
           variants={blurLeftToRight(1.2)}
           initial="hidden"
           animate="visible"
-          className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-700 leading-snug mx-auto"
+          className="mt-4 mb-3 text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-700 leading-snug mx-auto"
         >
           AI-Powered, Done-For-You Client Acquisition System That
           brings Ready-to-Invest Clients On 100% Autopilot.

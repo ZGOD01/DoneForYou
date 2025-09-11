@@ -20,6 +20,7 @@ import Refund from './pages/Refund';
 import Privacy from './pages/Privacy';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import WhyCoachesChooseUs from './components/WhyCoachesChooseUs';
 
 function App() {
   return (
@@ -33,13 +34,13 @@ function App() {
               <>
                 <Review />
                 <Hero />
-                {/* <VideoSection /> */}
                 <TestimonialsMarquee />
                 <BeforeAfterMarquee />
                 <PerfectForSection />
                 <PainTruthSection />
                 <ProcessFlow />
                 <Bonuses />
+                <WhyCoachesChooseUs/>
                 <QASection />
               </>
             }

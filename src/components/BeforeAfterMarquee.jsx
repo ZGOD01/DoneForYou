@@ -16,13 +16,10 @@ export default function BeforeAfterMarquee() {
     <section className="bg-white py-16">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-black">
-          Not 1 or 2, it’s <span className="text-pink-600">998+ women</span> who
-          have seen the results.
+          The Only System Top{" "}
+          <span className="text-blue-600">1% Fat Loss Coaches</span> Need To
+          Scale To <span className="text-blue-600">₹1 Cr+ This Year.</span>
         </h2>
-        <p className="mt-2 text-black text-sm md:text-base">
-          Yes, This helped <span className="font-semibold">998+ ladies</span>{" "}
-          struggling with weight loss, PCOD, PCOS, bloating, body toning etc.
-        </p>
       </div>
 
       {/* ✅ Marquee rows */}
@@ -63,7 +60,6 @@ export default function BeforeAfterMarquee() {
               <div className="absolute bottom-2 right-2 bg-black text-white text-xs px-2 py-1 rounded-full">
                 After
               </div>
-
             </div>
           ))}
         </div>

@@ -1,4 +1,3 @@
-// QASection.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -6,7 +5,7 @@ const faqs = [
   {
     question: "Do I need a big following?",
     answer:
-      "Not at all. Many of our top clients scaled to 7 figure with fewer than 1,000 followers. We focus on systems, not vanity metrics.",
+      "Not at all. Many of our top clients scaled to 7 figures with fewer than 1,000 followers. We focus on systems, not vanity metrics.",
   },
   {
     question: "What if I’m just starting out?",
@@ -53,41 +52,41 @@ export default function QASection() {
   };
 
   return (
-    <section className="py-20 bg-white text-black">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-        {/* Left side heading */}
-        <div className="text-left">
-          <h2 className="text-4xl font-medium leading-snug mb-4">
-            We simulated what questions <br />
-            you need answering
+    <section className="relative overflow-hidden bg-white py-24">
+      <div className="absolute inset-0 z-0">
+        <div className="h-full w-full bg-white opacity-50"></div>
+        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-purple-200 opacity-20 blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 h-72 w-72 rounded-full bg-indigo-200 opacity-20 blur-3xl"></div>
+      </div>
+      
+      <div className="relative max-w-6xl mx-auto px-6">
+        {/* Centralized Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
+            Frequently Asked Questions
           </h2>
-          <p className="text-gray-700 text-lg">
-            Explore quick solutions to common questions. <br />
-            Need more? Feel free to contact our{" "}
-            <a href="#" className="underline text-blue-600">
-              support team
-            </a>.
-          </p>
         </div>
 
-        {/* Right side accordion */}
-        <div className="space-y-1">
+        {/* Accordion */}
+        <div className="md:w-3/4 lg:w-2/3 mx-auto space-y-3">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-black/20 rounded-lg overflow-hidden"
+              className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transition-shadow duration-300 hover:shadow-2xl"
             >
               <button
                 onClick={() => toggle(index)}
-                className="w-full flex justify-between items-center px-6 py-5 text-left text-base font-normal hover:bg-black/5 transition"
+                className="w-full flex justify-between items-center px-6 py-5 text-left text-lg font-semibold text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-lg"
               >
-                {faq.question}
+                <span>{faq.question}</span>
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-sm font-light"
+                  className="text-xl text-gray-400"
                 >
-                  ▾
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </motion.span>
               </button>
 
@@ -100,7 +99,7 @@ export default function QASection() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-5 text-gray-800 text-sm leading-relaxed">
+                    <div className="px-6 pb-6 pt-2 text-gray-600 leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -110,33 +109,6 @@ export default function QASection() {
           ))}
         </div>
       </div>
-
-      {/* Why Coaches Choose Us (Box with Animation) */}
-      <motion.div
-        className="max-w-3xl mx-auto px-6 mt-20"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={boxVariants}
-      >
-        <div className="rounded-xl border border-black/20 bg-gray-50 p-10 text-center shadow-lg">
-          <h3 className="text-2xl font-semibold mb-8">Why Coaches Choose Us</h3>
-          <ul className="space-y-4 text-gray-800 text-lg">
-            {reasons.map((reason, idx) => (
-              <motion.li
-                key={idx}
-                custom={idx}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={listVariants}
-              >
-                {reason}
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-      </motion.div>
     </section>
   );
 }

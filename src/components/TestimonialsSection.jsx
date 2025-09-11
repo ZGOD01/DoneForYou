@@ -32,9 +32,6 @@ export default function TestimonialsMarquee() {
           See How Coaches Just Like You{" "}
           <span className="text-blue-600">Scaled to 7 Figures</span>
         </h2>
-        <p className="mt-2 text-gray-600">
-          Now it's your turn to lose the extra weight and step into the healthiest version of you.
-        </p>
       </div>
 
       {/* ✅ Marquee wrapper */}

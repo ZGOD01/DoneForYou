@@ -74,28 +74,28 @@ export default function Terms() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0f2c] to-black text-gray-200">
+    <div className="min-h-screen bg-white  text-black">
       <div className="max-w-4xl mx-auto px-6 py-16">
         {/* Page Heading */}
-        <h1 className="text-4xl font-extrabold text-white mb-12 text-left">
+        <h1 className="text-4xl font-extrabold text-black mb-12 text-left">
           Terms & Conditions
         </h1>
 
         {/* Intro Text */}
-        <p className="text-gray-300 max-w-2xl mb-12 text-left">
-          Welcome to <strong className="text-white">Scale100Million.com</strong>. By
+        <p className="text-gray-600 max-w-2xl mb-12 text-left">
+          Welcome to <strong className="text-black">Scale100Million.com</strong>. By
           accessing or using our website and services, you agree to be bound by
           these Terms & Conditions.
         </p>
 
         {/* All sections in one simple box */}
-        <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 shadow-md p-6 hover:bg-white/10 transition-all duration-300 space-y-6 text-left">
+        <div className="bg-white/5 backdrop-blur-md rounded-xl border border-black/50 shadow-md p-6 hover:bg-white/10 transition-all duration-300 space-y-6 text-left">
           {allSections.map((section) => (
             <div key={section.id}>
-              <h2 className="text-lg font-semibold text-white mb-2">
+              <h2 className="text-lg font-semibold text-black mb-2">
                 {section.id}. {section.title}
               </h2>
-              <div className="text-gray-300 leading-relaxed">
+              <div className="text-gray-600 leading-relaxed">
                 {section.content}
               </div>
             </div>
