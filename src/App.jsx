@@ -9,8 +9,6 @@ import ProcessFlow from './components/ProcessFlow';
 import QASection from './components/QASection';
 import Review from './components/Review';
 import TestimonialsMarquee from './components/TestimonialsSection';
-import TopMarquee from './components/TopMarquee';
-import VideoSection from './components/VideoSection';
 
 // Import Router
 import { Routes, Route } from "react-router-dom";
@@ -25,7 +23,6 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Main content area grows to push footer down */}
       <main className="flex-grow">
         <Routes>
           {/* Main Landing Page */}
@@ -33,10 +30,8 @@ function App() {
             path="/"
             element={
               <>
-                <TopMarquee />
                 <Review />
                 <Hero />
-                <VideoSection />
                 <TestimonialsMarquee />
                 <BeforeAfterMarquee />
                 <PerfectForSection />
