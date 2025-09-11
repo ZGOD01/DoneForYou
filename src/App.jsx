@@ -33,7 +33,7 @@ function App() {
               <>
                 <Review />
                 <Hero />
-                <VideoSection />
+                {/* <VideoSection /> */}
                 <TestimonialsMarquee />
                 <BeforeAfterMarquee />
                 <PerfectForSection />
