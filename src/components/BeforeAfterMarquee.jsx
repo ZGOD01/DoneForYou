@@ -14,7 +14,7 @@ export default function BeforeAfterMarquee() {
 
   return (
     <section className="bg-white py-16">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 pr-5 pl-5">
         <h2 className="text-2xl md:text-3xl font-bold text-black">
           The Only System Top{" "}
           <span className="text-blue-600">1% Fat Loss Coaches</span> Need To
