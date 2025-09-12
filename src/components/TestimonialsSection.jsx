@@ -28,7 +28,7 @@ export default function TestimonialsMarquee() {
   return (
     <section className="bg-white text-black py-16 overflow-hidden">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold">
+        <h2 className="text-3xl md:text-4xl font-bold pl-1.5 pr-1.5">
           See How Coaches Just Like You{" "}
           <span className="text-blue-600">Scaled to 7 Figures</span>
         </h2>
