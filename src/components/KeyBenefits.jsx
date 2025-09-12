@@ -12,10 +12,8 @@ export default function KeyBenefits() {
     <div className="flex flex-col items-center">
       <div className="w-full max-w-4xl mx-auto px-4">
         {/* Main container for the benefit boxes */}
-        {/* Mobile: flex-col, Desktop: flex-row, justify-between */}
         <div className="flex flex-col gap-4 md:flex-row md:justify-between">
-          {/* Container for the first two benefits. 
-              Mobile: flex-row, Desktop: flex-grow to fill space */}
+          {/* Container for the first two benefits. */}
           <div className="flex flex-row justify-between gap-4 w-full md:flex-grow">
             {benefits.slice(0, 2).map((b, i) => (
               <div
@@ -28,9 +26,9 @@ export default function KeyBenefits() {
                   justify-center
                   text-sm
                   whitespace-nowrap
-                  flex-1
+                  flex-grow
                   min-w-0
-                  md:flex-1 👈
+                  md:flex-1
                 `}
               >
                 <span className="font-medium text-gray-800 text-sm">
@@ -40,8 +38,7 @@ export default function KeyBenefits() {
             ))}
           </div>
 
-          {/* Third benefit box. 
-              Mobile: w-full, Desktop: no width constraint, auto-aligned */}
+          {/* Third benefit box. */}
           <div className="w-full flex justify-center md:w-auto">
             <div
               className={`
@@ -52,9 +49,9 @@ export default function KeyBenefits() {
                 justify-center
                 text-sm
                 whitespace-nowrap
-                flex-1
+                flex-grow
                 min-w-0
-                md:flex-1 👈
+                md:flex-1
               `}
             >
               <span className="font-medium text-gray-800 text-sm">

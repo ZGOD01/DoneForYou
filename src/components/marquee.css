@@ -6,9 +6,11 @@
 
 .marquee-content {
   display: flex;
-  gap: 1.5rem; /* same as space-x-6 */
+  gap: 1.5rem; /* space-x-6 */
   width: max-content;
+  white-space: nowrap;
   animation: marquee 25s linear infinite;
+  will-change: transform;
 }
 
 @keyframes marquee {
@@ -16,6 +18,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-51%); /* Prevents sub-pixel overflow */
   }
 }

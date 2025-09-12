@@ -2,6 +2,8 @@
   display: flex;
   gap: 1.5rem;
   position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 
 .before-after-card {
@@ -29,7 +31,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-51%); /* Prevents sub-pixel overflow */
   }
 }
 
@@ -38,6 +40,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(50%);
+    transform: translateX(51%); /* Prevents sub-pixel overflow */
   }
 }
