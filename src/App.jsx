@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import PainTruthSection from './components/PainTruthSection';
 import PerfectForSection from './components/PerfectForSection';
-import ProcessFlow from './components/ProcessFlow';
+// import ProcessFlow from './components/ProcessFlow';
 import QASection from './components/QASection';
 import Review from './components/Review';
 import TestimonialsMarquee from './components/TestimonialsSection';
@@ -21,6 +21,7 @@ import Privacy from './pages/Privacy';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import WhyCoachesChooseUs from './components/WhyCoachesChooseUs';
+import PipelineBackground from './components/PipelineBackground';
 
 function App() {
   return (
@@ -38,7 +39,8 @@ function App() {
                 <BeforeAfterMarquee />
                 <PerfectForSection />
                 <PainTruthSection />
-                <ProcessFlow />
+                <PipelineBackground />
+                {/* <ProcessFlow /> */}
                 <Bonuses />
                 <WhyCoachesChooseUs/>
                 <QASection />
