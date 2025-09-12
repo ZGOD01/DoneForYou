@@ -80,11 +80,10 @@ export default function PerfectForSection() {
           style={{ originY: 0 }}
         ></motion.div>
 
-        {/* The issue is the cards are too wide on mobile and the text is forced to not wrap */}
-        <div className="grid grid-cols-2 gap-x-4 md:gap-x-16 lg:gap-x-24 relative z-10">
+        <div className="grid grid-cols-2 gap-x-8 md:gap-x-24 lg:gap-x-32 relative z-10">
           {/* Left Column (The "Not For" Path) */}
           <motion.div
-            className="flex flex-col items-end space-y-12"
+            className="flex flex-col items-end space-y-16" // Adjusted space-y here
             variants={leftColumnVariants}
             initial="hidden"
             whileInView="visible"
@@ -97,7 +96,11 @@ export default function PerfectForSection() {
             </motion.div>
 
             {notForItems.map((item, index) => (
-              <motion.div key={`not-${index}`} variants={itemVariants} className="relative group w-full max-w-[175px] sm:max-w-xs">
+              <motion.div
+                key={`not-${index}`}
+                variants={itemVariants}
+                className={`relative group w-full max-w-[175px] sm:max-w-xs ${index === 0 ? 'my-3' : ''} ${index >= 1 ? 'mt-16' : ''}`} // Adjusted mt-16
+              >
                 <div className="relative bg-red-50 border-2 border-red-300 rounded-xl p-3 shadow-md flex items-center space-x-3 transition-transform duration-300 hover:scale-105 group-hover:shadow-lg">
                   <FaTimesCircle className="text-red-500 text-2xl flex-shrink-0" />
                   <p className="text-gray-800 font-medium text-left text-xs sm:text-sm md:text-base">{item.text}</p>
@@ -111,7 +114,7 @@ export default function PerfectForSection() {
 
           {/* Right Column (The "Perfect For" Path) */}
           <motion.div
-            className="flex flex-col items-start space-y-12 mt-16 md:mt-20" // Offset right column to create a staggered effect
+            className="flex flex-col items-start space-y-16 mt-17 md:mt-20" // Adjusted space-y and mt here
             variants={rightColumnVariants}
             initial="hidden"
             whileInView="visible"
@@ -124,7 +127,11 @@ export default function PerfectForSection() {
             </motion.div>
 
             {perfectForItems.map((item, index) => (
-              <motion.div key={`perfect-${index}`} variants={itemVariants} className="relative group w-full max-w-[175px] sm:max-w-xs">
+              <motion.div
+                key={`perfect-${index}`}
+                variants={itemVariants}
+                className={`relative group w-full max-w-[175px] sm:max-w-xs ${index === 0 ? 'my-4' : ''} ${index >= 1 ? 'mt-18' : ''}`} // Adjusted mt-16
+              >
                 <div className="relative bg-green-50 border-2 border-green-300 rounded-xl p-3 shadow-md flex items-center space-x-3 transition-transform duration-300 hover:scale-105 group-hover:shadow-lg">
                   <FaCheckCircle className="text-green-500 text-2xl flex-shrink-0" />
                   <p className="text-gray-800 font-medium text-left text-xs sm:text-sm md:text-base">{item.text}</p>
