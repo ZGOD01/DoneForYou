@@ -1,14 +1,14 @@
 import React from "react";
 import ScratchCard from "react-scratchcard-v2";
 import { Star, MessageCircle, Clock, Gift } from "lucide-react";
-import ScratchMeImg from "../assets/scratch-me.jpg";
+import ScratchMeImg from "../assets/scratch-me-1.png";
 
 const settings = {
   width: 280,
   height: 280,
   image: ScratchMeImg,
-  finishPercent: 85,
-  brushSize: 10,
+  finishPercent: 70,
+  brushSize: 20,
   onComplete: () => console.log("🎉 Card cleared!"),
 };
 
