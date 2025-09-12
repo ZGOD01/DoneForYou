@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import CallToActionButton from "./CallToActionButton";
 import KeyBenefits from "./KeyBenefits";
 
 export default function Hero() {
@@ -20,9 +19,9 @@ export default function Hero() {
   return (
     <div className="relative z-[999] bg-white min-h-[80vh] flex items-start justify-center overflow-hidden">
       {/* 📱 Push down on mobile */}
-      <div className="relative px-6 text-center max-w-5xl mt-1 md:mt-0">
+      <div className="relative px-4 text-center max-w-5xl mt-1 md:mt-0">
         {/* Title */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug tracking-tight mx-auto">
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-snug tracking-tight mx-auto">
           <motion.span
             variants={blurLeftToRight(0)}
             initial="hidden"
@@ -38,7 +37,7 @@ export default function Hero() {
             className="block text-black"
           >
             From{" "}
-            <span className="bg-yellow-100 px-2"> {/* This is the new highlighting span */}
+            <span className="bg-yellow-100 px-2">
               <span className="text-blue-600">1L</span>{" "}
               <span className="text-blue-600">To</span>{" "}
               <span className="text-blue-600">10L/Month PROFIT</span>
@@ -59,7 +58,7 @@ export default function Hero() {
           variants={blurLeftToRight(1.2)}
           initial="hidden"
           animate="visible"
-          className="mt-4 mb-3 text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-700 leading-snug mx-auto"
+          className="my-4 text-[15px] sm:text-sm md:text-base lg:text-lg font-medium text-gray-700 leading-snug mx-auto pr-6 pl-6"
         >
           AI-Powered, Done-For-You Client Acquisition System That
           brings Ready-to-Invest Clients On 100% Autopilot.
