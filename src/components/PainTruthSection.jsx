@@ -97,7 +97,7 @@ export default function PainTruthSection() {
 
           <div className="flex items-center space-x-4 mb-8 relative z-10">
             <FaLightbulb className="text-5xl text-sky-500" />
-            <h3 className="text-3xl font-bold text-sky-600">The Solution</h3>
+            <h3 className="text-3xl font-bold text-sky-600">The Truth</h3>
           </div>
 
           <motion.ul
