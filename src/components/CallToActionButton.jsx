@@ -10,7 +10,7 @@ export default function CallToActionButton() {
     >
       <motion.a
         href="/book-strategy-call"
-        className="relative w-full sm:max-w-md px-12 py-3 bg-red-600 text-white font-semibold 
+        className="relative w-full sm:max-w-md px-12 py-8 bg-red-600 text-white font-semibold 
           text-sm sm:text-base md:text-lg rounded-full shadow-lg overflow-hidden 
           transition transform hover:scale-105 duration-300 ease-out"
         whileHover={{ scale: 1.1 }}

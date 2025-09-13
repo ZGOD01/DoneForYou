@@ -28,7 +28,7 @@ export default function TestimonialsMarquee() {
   ];
 
   return (
-    <section className="bg-white text-black py-16">
+    <section className="bg-white text-black pt-0 pb-4 md:py-10">
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold px-2">
