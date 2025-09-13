@@ -19,19 +19,19 @@ export default function TestimonialsMarquee() {
       name: "Sourav",
       text: "The Scale100Million team feels like an extension of my business, handling the backend so I can focus fully on coaching.",
       result: "Hit 5X growth in Revenue in only 3 months.",
-      image: sourav, 
+      image: sourav,
     },
     {
       name: "Prashant",
       text: "Scale100Million turned my overwhelm into stress-free systems, making scaling smooth, predictable, and backed by the best partners.",
       result: "I scaled my revenue to ₹8 lakh/month in just 3.5 months.",
-      image: prashant, 
+      image: prashant,
     },
     {
       name: "Sula",
       text: "The Scale100Million team transformed my chaos into simple, reliable systems, making growth smooth and stress-free.",
       result: "Hit 5X growth in Revenue in just 3 months.",
-      image: sula, 
+      image: sula,
     },
   ];
 
@@ -57,16 +57,16 @@ export default function TestimonialsMarquee() {
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="w-12 h-12 mx-auto rounded-full object-cover mb-3"
+                  className="w-20 h-20 mx-auto rounded-full object-cover mb-3" // Increased size here
                 />
               ) : (
-                <div className="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-white to-blue-100 border border-gray-300 mb-3"></div>
+                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-white to-blue-100 border border-gray-300 mb-3"></div> // Increased size here
               )}
               <h3 className="text-base font-bold text-gray-800">{t.name}</h3>
               <div className="flex justify-center text-yellow-500 mb-1">
                 {"★".repeat(5)}
               </div>
-              <p className="text-xs italic mb-3 text-gray-600">"{t.text}"</p>
+              <p className="text-xs font-medium mb-3 text-black">"{t.text}"</p>
               <span className="inline-block bg-blue-100 text-blue-900 font-semibold px-3 py-1 rounded-full text-xs border border-blue-200">
                 {t.result}
               </span>
