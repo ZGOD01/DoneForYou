@@ -3,11 +3,7 @@ import React from 'react';
 const Pipeline = () => {
   return (
     <div className="flex flex-col items-center p-4 sm:p-8 md:p-12 bg-white font-sans">
-      <div className="mb-8 md:mb-10 text-center">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-black drop-shadow-lg">
-          The Coach's Journey
-        </h1>
-      </div>
+      
 
       {/* Container with responsive layout */}
       <div className="flex w-full justify-center">

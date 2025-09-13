@@ -16,7 +16,6 @@ import Privacy from './pages/Privacy';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import WhyCoachesChooseUs from './components/WhyCoachesChooseUs';
-import PipelineBackground from './components/PipelineBackground';
 
 function App() {
   return (
@@ -33,7 +32,6 @@ function App() {
                 <BeforeAfterMarquee />
                 <PerfectForSection />
                 <PainTruthSection />
-                <PipelineBackground />
                 <Bonuses />
                 <WhyCoachesChooseUs />
                 <QASection />
