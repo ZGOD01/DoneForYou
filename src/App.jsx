@@ -1,20 +1,15 @@
-import './App.css'
+import './App.css';
 import BeforeAfterMarquee from './components/BeforeAfterMarquee';
 import Bonuses from './components/Bonuses';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import PainTruthSection from './components/PainTruthSection';
 import PerfectForSection from './components/PerfectForSection';
-// import ProcessFlow from './components/ProcessFlow';
 import QASection from './components/QASection';
 import Review from './components/Review';
 import TestimonialsMarquee from './components/TestimonialsSection';
-import VideoSection from './components/VideoSection';
-
-// Import Router
+import StickyBar from './components/StickyBar';
 import { Routes, Route } from "react-router-dom";
-
-// Import Pages
 import Terms from './pages/Terms';
 import Refund from './pages/Refund';
 import Privacy from './pages/Privacy';
@@ -25,10 +20,9 @@ import PipelineBackground from './components/PipelineBackground';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white pb-20">
       <main className="flex-grow">
         <Routes>
-          {/* Main Landing Page */}
           <Route
             path="/"
             element={
@@ -40,15 +34,12 @@ function App() {
                 <PerfectForSection />
                 <PainTruthSection />
                 <PipelineBackground />
-                {/* <ProcessFlow /> */}
                 <Bonuses />
-                <WhyCoachesChooseUs/>
+                <WhyCoachesChooseUs />
                 <QASection />
               </>
             }
           />
-
-          {/* Static Pages */}
           <Route path="/terms" element={<Terms />} />
           <Route path="/refund" element={<Refund />} />
           <Route path="/privacy" element={<Privacy />} />
@@ -57,7 +48,9 @@ function App() {
         </Routes>
       </main>
 
-      {/* Footer always at bottom */}
+      {/* Sticky bar is now always visible */}
+      <StickyBar />
+
       <Footer />
     </div>
   );

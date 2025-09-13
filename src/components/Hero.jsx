@@ -17,7 +17,7 @@ export default function Hero() {
   });
 
   return (
-    <div className="relative z-[999] bg-white min-h-[80vh] flex items-start justify-center overflow-hidden">
+    <div className="relative bg-white min-h-[80vh] flex items-start justify-center overflow-hidden">
       {/* 📱 Push down on mobile */}
       <div className="relative px-4 text-center max-w-5xl mt-1 md:mt-0">
         {/* Title */}
