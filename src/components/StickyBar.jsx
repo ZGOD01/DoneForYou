@@ -19,35 +19,33 @@ const StickyBar = () => {
             }
         }, 1000);
 
-        return () => {
-            clearInterval(myInterval);
-        };
+        return () => clearInterval(myInterval);
     }, [minutes, seconds]);
 
     return (
-        <div className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg flex items-center justify-between border-t border-gray-200 lg:px-20 z-[1000]">
+        <div className="fixed bottom-0 left-0 w-full bg-white p-4 shadow-lg flex items-center justify-between border-t border-gray-200 lg:px-20 z-[1000] space-x-2 sm:space-x-6">
+            
             {/* Left-aligned content */}
-            <div className="flex flex-col items-start space-y-1">
+            <div className="flex flex-col items-start space-y-1 min-w-[120px]">
                 <div className="text-red-600 text-2xl font-bold">
                     {minutes.toString().padStart(2, '0')}:
                     {seconds.toString().padStart(2, '0')}
                 </div>
-                <div className="flex items-center space-x-2 text-base text-gray-700">
+                <div className="flex items-center space-x-2 text-sm sm:text-base text-gray-700">
                     <span className="font-extrabold">Limited Slots Only!</span>
                 </div>
             </div>
 
             {/* Right-aligned content */}
-            <div className="flex flex-col items-center">
-                <div className="relative">
-                    <div className="bg-slate-800 text-white font-semibold text-xs px-4 py-1 rounded-full absolute -top-8 right-9 transform translate-x-1/4 translate-y-full">
-                        3 Slots Left
-                    </div>
-                    <button className="bg-red-600 text-white font-semibold text-sm sm:text-base md:text-lg rounded-3xl shadow-lg overflow-hidden transition transform mt-1 px-8 py-3">
-                        Book Your 7-Figure Strategy Call Now
-                    </button>
+            <div className="flex items-center flex-1 justify-end relative">
+                <div className="bg-slate-800 text-white font-semibold text-xs px-3 py-1 rounded-full absolute -top-4 right-5 text-center">
+                    3 Slots Left
                 </div>
+                <button className="bg-red-600 text-white font-semibold text-sm sm:text-base md:text-lg rounded-3xl shadow-lg overflow-hidden transition transform px-4 sm:px-6 py-2 sm:py-3 whitespace-normal text-center max-w-[200px] sm:max-w-[300px]">
+                    Book Your 7-Figure Strategy Call Now
+                </button>
             </div>
+
         </div>
     );
 };
