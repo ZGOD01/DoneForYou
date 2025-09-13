@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./marquee.css";
 
 export default function TestimonialsMarquee() {
+  const [isMarqueePaused, setIsMarqueePaused] = useState(false);
+
   const testimonials = [
     {
       name: "Sarina",
@@ -35,31 +37,21 @@ export default function TestimonialsMarquee() {
         </h2>
       </div>
 
-      {/* ✅ Marquee wrapper */}
-      <div className="marquee-wrapper overflow-hidden">
+      {/* Testimonials Marquee */}
+      <div className="marquee-wrapper overflow-hidden mb-12">
         <div className="marquee-track flex gap-6">
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className="w-[220px] sm:w-[240px] md:w-[260px] 
-        bg-gradient-to-br from-blue-50 via-white to-blue-100
-        backdrop-blur-xl border border-gray-200
-        p-4 rounded-xl shadow-md text-center flex-shrink-0"
+              className="w-[220px] sm:w-[240px] md:w-[260px] bg-gradient-to-br from-blue-50 via-white to-blue-100 backdrop-blur-xl border border-gray-200 p-4 rounded-xl shadow-md text-center flex-shrink-0"
             >
-              <div
-                className="w-12 h-12 mx-auto rounded-full 
-          bg-gradient-to-br from-white to-blue-100
-          border border-gray-300 mb-3"
-              ></div>
+              <div className="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-white to-blue-100 border border-gray-300 mb-3"></div>
               <h3 className="text-base font-bold text-gray-800">{t.name}</h3>
               <div className="flex justify-center text-yellow-500 mb-1">
                 {"★".repeat(5)}
               </div>
               <p className="text-xs italic mb-3 text-gray-600">"{t.text}"</p>
-              <span
-                className="inline-block bg-blue-100 text-blue-900 font-semibold 
-          px-3 py-1 rounded-full text-xs border border-blue-200"
-              >
+              <span className="inline-block bg-blue-100 text-blue-900 font-semibold px-3 py-1 rounded-full text-xs border border-blue-200">
                 {t.result}
               </span>
             </div>
@@ -67,18 +59,24 @@ export default function TestimonialsMarquee() {
         </div>
       </div>
 
-      {/* Videos side by side */}
-      <div className="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
-        <video
-          className="w-[260px] sm:w-[300px] md:w-[300px] h-[300px] object-cover rounded-xl shadow-lg"
-          controls
-          src="/path-to-video1.mp4"
-        />
-        <video
-          className="w-[260px] sm:w-[300px] md:w-[300px] h-[300px] object-cover rounded-xl shadow-lg"
-          controls
-          src="/path-to-video2.mp4"
-        />
+      {/* Videos Marquee */}
+      <div className="marquee-wrapper overflow-hidden">
+        <div
+          className={`marquee-track flex gap-6 ${isMarqueePaused ? "paused" : ""}`}
+          onMouseEnter={() => setIsMarqueePaused(true)}
+          onMouseLeave={() => setIsMarqueePaused(false)}
+        >
+          <video
+            className="w-[260px] sm:w-[300px] md:w-[300px] h-[300px] object-cover rounded-xl shadow-lg flex-shrink-0"
+            controls
+            src="/path-to-video1.mp4"
+          />
+          <video
+            className="w-[260px] sm:w-[300px] md:w-[300px] h-[300px] object-cover rounded-xl shadow-lg flex-shrink-0"
+            controls
+            src="/path-to-video2.mp4"
+          />
+        </div>
       </div>
     </section>
   );

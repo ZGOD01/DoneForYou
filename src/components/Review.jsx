@@ -58,7 +58,7 @@ const Review = () => {
           <span className="font-medium">4.9 Review</span>
           <span className="mx-1">|</span>
           <span>
-            <AnimatedNumber value={12000} /> Clients
+            <AnimatedNumber value={100} /> Clients
           </span>
         </div>
       </div>

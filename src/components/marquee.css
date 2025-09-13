@@ -7,14 +7,18 @@
 .marquee-track {
   display: flex;
   gap: 1.5rem;
-  animation: marquee-step 25s linear infinite; /* constant speed */
+  animation: marquee-scroll 25s linear infinite;
 }
 
-@keyframes marquee-step {
+.marquee-track.paused {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
   0% {
-    transform: translateX(100%); /* start off-screen right */
+    transform: translateX(100%); 
   }
   100% {
-    transform: translateX(-100%); /* move fully off-screen left */
+    transform: translateX(-100%); 
   }
 }

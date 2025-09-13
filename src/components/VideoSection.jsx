@@ -15,10 +15,6 @@ export default function VideoSection() {
             allowFullScreen
           ></iframe>
         </div>
-        {/* 👇 **CHANGE**: Added "px-4" to keep the button centered with padding */}
-        <div className="mt-2 sm:mt-3 px-4"> 
-          <CallToActionButton />
-        </div>
       </section>
     </>
   );
