@@ -14,12 +14,12 @@ const Pipeline = () => {
         <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-[1100px]">
 
           {/* BEFORE Card */}
-          <div className="w-32 sm:w-40 md:w-48 h-48 sm:h-52 md:h-64 p-3 sm:p-5 mb-6 md:mb-0 md:mr-8 rounded-lg shadow-md bg-yellow-400">
-            <h4 className="mb-1 text-sm sm:text-lg font-bold">BEFORE</h4>
-            <ul className="list-none p-0 m-0 text-xs sm:text-sm">
-              <li className="mb-1">Unpredictable ₹1.2L/month</li>
-              <li className="mb-1">Clients only when you chase</li>
-              <li className="mb-1">Time trapped in DMs instead of coaching</li>
+          <div className="w-40 sm:w-48 md:w-56 h-auto p-4 sm:p-6 mb-6 md:mb-0 md:mr-8 rounded-lg shadow-md bg-yellow-400">
+            <h4 className="mb-2 text-sm sm:text-lg font-bold">BEFORE</h4>
+            <ul className="list-disc list-outside text-xs sm:text-sm space-y-2 ml-4">
+              <li>Unpredictable ₹1L/month revenue</li>
+              <li>Clients only when you chase</li>
+              <li>Time trapped in DMs instead of coaching</li>
             </ul>
           </div>
 
@@ -97,12 +97,12 @@ const Pipeline = () => {
           </div>
 
           {/* AFTER Card */}
-          <div className="w-32 sm:w-40 md:w-48 h-48 sm:h-52 md:h-64 p-3 sm:p-5 mt-6 md:mt-0 md:ml-8 rounded-lg shadow-md bg-blue-400">
-            <h4 className="mb-1 text-sm sm:text-lg font-bold">AFTER</h4>
-            <ul className="list-none p-0 m-0 text-xs sm:text-sm">
-              <li className="mb-1">₹1.1L/month predictable revenue</li>
-              <li className="mb-1">Qualified clients booking calls daily</li>
-              <li className="mb-1">You focus only on coaching + closing</li>
+          <div className="w-40 sm:w-48 md:w-56 h-auto p-4 sm:p-6 mt-6 md:mt-0 md:ml-8 rounded-lg shadow-md bg-blue-400">
+            <h4 className="mb-2 text-sm sm:text-lg font-bold">AFTER</h4>
+            <ul className="list-disc list-outside text-xs sm:text-sm space-y-2 ml-4">
+              <li>₹10L/month predictable revenue</li>
+              <li>Qualified clients booking calls daily</li>
+              <li>You focus only on coaching + closing</li>
             </ul>
           </div>
 
