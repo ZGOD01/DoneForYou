@@ -11,6 +11,7 @@ import {
   FaMinusCircle,
   FaQuestionCircle,
 } from "react-icons/fa";
+import CallToActionButton from "./CallToActionButton";
 
 export default function PerfectForSection() {
   const leftColumnVariants = {
@@ -82,6 +83,11 @@ export default function PerfectForSection() {
 
   return (
     <section className="bg-white py-16 px-6 relative overflow-hidden">
+      {/* 🟢 The CallToActionButton is now at the top of the section */}
+      <div className="flex justify-center mb-12">
+        <CallToActionButton />
+      </div>
+
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
           Is This Program Your Path to Success?
@@ -125,8 +131,9 @@ export default function PerfectForSection() {
               <motion.div
                 key={`not-${index}`}
                 variants={itemVariants}
-                className={`relative group w-full max-w-[175px] sm:max-w-xs ${index === 0 ? "my-3" : "mt-16"
-                  }`}
+                className={`relative group w-full max-w-[175px] sm:max-w-xs ${
+                  index === 0 ? "my-3" : "mt-16"
+                }`}
               >
                 <div className="relative bg-red-50 border-2 border-red-300 rounded-xl p-3 shadow-md flex items-center space-x-3 transition-transform duration-300 hover:scale-105 group-hover:shadow-lg">
                   <FaTimesCircle className="text-red-500 text-2xl flex-shrink-0" />
@@ -163,12 +170,13 @@ export default function PerfectForSection() {
                 key={`perfect-${index}`}
                 variants={itemVariants}
                 className={`relative group w-full max-w-[175px] sm:max-w-xs
-      ${index === 0
-                    ? "my-4"
-                    : index === perfectForItems.length - 1
-                      ? "-mt-6" // last card shifted UP
-                      : "mt-12"
-                  }`}
+        ${
+          index === 0
+            ? "my-4"
+            : index === perfectForItems.length - 1
+            ? "-mt-6" // last card shifted UP
+            : "mt-12"
+        }`}
               >
                 <div className="relative bg-green-50 border-2 border-green-300 rounded-xl p-3 shadow-md flex items-center space-x-3 transition-transform duration-300 hover:scale-105 group-hover:shadow-lg">
                   <FaCheckCircle className="text-green-500 text-2xl flex-shrink-0" />
@@ -181,8 +189,6 @@ export default function PerfectForSection() {
                 </div>
               </motion.div>
             ))}
-
-
           </motion.div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import CallToActionButton from "./CallToActionButton"; // Import the CTA button
 
 const reasons = [
   {
@@ -104,6 +105,11 @@ export default function WhyCoachesChooseUs() {
       viewport={{ once: true, amount: 0.3 }}
       variants={boxVariants}
     >
+      {/* Container for the CTA button */}
+      <div className="text-center mb-10">
+        <CallToActionButton />
+      </div>
+
       <div className="text-center mb-12">
         <h3 className="text-4xl font-bold text-gray-900 tracking-tight mb-4">
           Why Coaches Choose Us

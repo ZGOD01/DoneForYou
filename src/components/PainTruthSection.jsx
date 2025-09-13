@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaFire, FaLightbulb, FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import CallToActionButton from "./CallToActionButton";
 
 export default function PainTruthSection() {
   const painPoints = [
@@ -32,6 +33,11 @@ export default function PainTruthSection() {
 
   return (
     <section className="relative bg-white py-20 px-6">
+      {/* Container for the CTA button */}
+      <div className="max-w-5xl mx-auto text-center mb-10">
+        <CallToActionButton />
+      </div>
+
       {/* Main Heading */}
       <div className="max-w-5xl mx-auto text-center mb-16">
         <motion.h2
