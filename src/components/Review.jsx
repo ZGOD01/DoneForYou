@@ -1,6 +1,10 @@
 import { Star } from "lucide-react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useState } from "react";
+import snehaProtrait from "../assets/sneha-protrait.jpg";
+import sourav from "../assets/sourav.jpg";
+import prashant from "../assets/prashant.jpg";
+import sula from "../assets/sula.jpg";
 
 const AnimatedNumber = ({ value, duration = 2 }) => {
   const count = useMotionValue(0);
@@ -27,22 +31,22 @@ const Review = () => {
         {/* Avatar group */}
         <div className="flex -space-x-2">
           <img
-            src="https://randomuser.me/api/portraits/men/32.jpg"
+            src={snehaProtrait}
             alt="user"
             className="w-8 h-8 rounded-full"
           />
           <img
-            src="https://randomuser.me/api/portraits/women/44.jpg"
+            src={sourav}
             alt="user"
             className="w-8 h-8 rounded-full"
           />
           <img
-            src="https://randomuser.me/api/portraits/men/65.jpg"
+            src={prashant}
             alt="user"
             className="w-8 h-8 rounded-full"
           />
           <img
-            src="https://randomuser.me/api/portraits/women/12.jpg"
+            src={sula}
             alt="user"
             className="w-8 h-8 rounded-full"
           />
