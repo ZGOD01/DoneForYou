@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./marquee.css";
 import snehaProtrait from "../assets/sneha-protrait.jpg";
-import sourav from "../assets/Sourav.jpg";
-import prashant from "../assets/Prashant.jpg";
+import sourav from "../assets/sourav.jpg";
+import prashant from "../assets/prashant.jpg";
 import sula from "../assets/sula.jpg";
 
 export default function TestimonialsMarquee() {
