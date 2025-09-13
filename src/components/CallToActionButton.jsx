@@ -16,7 +16,7 @@ export default function CallToActionButton() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        Book a Strategy Call
+        Book Your 7-Figure Strategy Call Now
         {/* Cross Line Effect */}
         <span className="animate-cross-line"></span>
       </motion.a>

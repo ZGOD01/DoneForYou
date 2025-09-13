@@ -44,7 +44,7 @@ const StickyBar = () => {
                         3 Slots Left
                     </div>
                     <button className="bg-red-600 text-white font-semibold text-sm sm:text-base md:text-lg rounded-3xl shadow-lg overflow-hidden transition transform mt-1 px-8 py-3">
-                        Book a Strategy Call
+                        Book Your 7-Figure Strategy Call Now
                     </button>
                 </div>
             </div>
