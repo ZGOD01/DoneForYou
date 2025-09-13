@@ -1,23 +1,20 @@
-.marquee-container {
+.marquee-wrapper {
   position: relative;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
 }
 
-.marquee-content {
+.marquee-track {
   display: flex;
-  gap: 1.5rem; /* space-x-6 */
-  width: max-content;
-  white-space: nowrap;
-  animation: marquee 25s linear infinite;
-  will-change: transform;
+  gap: 1.5rem;
+  animation: marquee-step 25s linear infinite; /* constant speed */
 }
 
-@keyframes marquee {
+@keyframes marquee-step {
   0% {
-    transform: translateX(0);
+    transform: translateX(100%); /* start off-screen right */
   }
   100% {
-    transform: translateX(-51%); /* Prevents sub-pixel overflow */
+    transform: translateX(-100%); /* move fully off-screen left */
   }
 }

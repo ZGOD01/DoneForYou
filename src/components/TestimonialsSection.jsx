@@ -26,53 +26,59 @@ export default function TestimonialsMarquee() {
   ];
 
   return (
-    <section className="bg-white text-black py-16 overflow-hidden">
+    <section className="bg-white text-black py-16">
+      {/* Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold pl-1.5 pr-1.5">
+        <h2 className="text-3xl md:text-4xl font-bold px-2">
           See How Coaches Just Like You{" "}
           <span className="text-blue-600">Scaled to 7 Figures</span>
         </h2>
       </div>
 
       {/* ✅ Marquee wrapper */}
-      <div className="marquee-container">
-        <div className="marquee-content">
-          {[...testimonials, ...testimonials].map((t, index) => (
+      <div className="marquee-wrapper overflow-hidden">
+        <div className="marquee-track flex gap-6">
+          {testimonials.map((t, index) => (
             <div
               key={index}
               className="w-[220px] sm:w-[240px] md:w-[260px] 
-              bg-gradient-to-br from-blue-50 via-white to-blue-100
-              backdrop-blur-xl border border-gray-200
-              p-4 rounded-xl shadow-md text-center"
+        bg-gradient-to-br from-blue-50 via-white to-blue-100
+        backdrop-blur-xl border border-gray-200
+        p-4 rounded-xl shadow-md text-center flex-shrink-0"
             >
-              {/* Avatar circle */}
               <div
                 className="w-12 h-12 mx-auto rounded-full 
-                bg-gradient-to-br from-white to-blue-100
-                border border-gray-300 mb-3"
+          bg-gradient-to-br from-white to-blue-100
+          border border-gray-300 mb-3"
               ></div>
-
-              {/* Name */}
               <h3 className="text-base font-bold text-gray-800">{t.name}</h3>
-
-              {/* Stars */}
               <div className="flex justify-center text-yellow-500 mb-1">
                 {"★".repeat(5)}
               </div>
-
-              {/* Testimonial */}
               <p className="text-xs italic mb-3 text-gray-600">"{t.text}"</p>
-
-              {/* Result badge */}
               <span
                 className="inline-block bg-blue-100 text-blue-900 font-semibold 
-                px-3 py-1 rounded-full text-xs border border-blue-200"
+          px-3 py-1 rounded-full text-xs border border-blue-200"
               >
                 {t.result}
               </span>
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Videos side by side */}
+      <div className="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
+        <video
+          className="w-[260px] sm:w-[300px] md:w-[300px] h-[300px] object-cover rounded-xl shadow-lg"
+          controls
+          src="/path-to-video1.mp4"
+        />
+        <video
+          className="w-[260px] sm:w-[300px] md:w-[300px] h-[300px] object-cover rounded-xl shadow-lg"
+          controls
+          src="/path-to-video2.mp4"
+        />
       </div>
     </section>
   );
