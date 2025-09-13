@@ -1,4 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
 import VideoSection from "./VideoSection";
 
 export default function KeyBenefits() {
@@ -13,48 +12,46 @@ export default function KeyBenefits() {
       <div className="w-full max-w-4xl mx-auto px-4">
         {/* Main container for the benefit boxes */}
         <div className="flex flex-col gap-4 md:flex-row md:justify-between">
-          {/* Container for the first two benefits. */}
+          {/* First two benefits */}
           <div className="flex flex-row justify-between gap-4 w-full md:flex-grow">
             {benefits.slice(0, 2).map((b, i) => (
               <div
                 key={i}
                 className={`
                   flex items-center gap-2 rounded-full py-4
-                  bg-white shadow-md border border-gray-200
-                  transition-all duration-300
-                  px-4
-                  justify-center
-                  text-sm
-                  whitespace-nowrap
-                  flex-grow
-                  min-w-0
+                  bg-gradient-to-br from-blue-50 via-white to-blue-100
+                  backdrop-blur-xl border border-gray-200
+                  shadow-md transition-all duration-300
+                  px-4 justify-center text-sm whitespace-nowrap flex-grow min-w-0 
                   md:flex-1
                 `}
+                style={{
+                  boxShadow: "inset 0 0 25px rgba(59, 130, 246, 0.25)",
+                }}
               >
-                <span className="font-medium text-gray-800 text-sm">
+                <span className="font-medium text-gray-800 text-sm text-glow-effect">
                   {b.title}
                 </span>
               </div>
             ))}
           </div>
 
-          {/* Third benefit box. */}
-          <div className="w-full flex justify-center md:w-auto">
+          {/* Third benefit */}
+          <div className="w-full flex justify-center md:w-auto md:flex-1">
             <div
               className={`
                 flex items-center gap-2 rounded-full py-4
-                bg-white shadow-md border border-gray-200
-                transition-all duration-300
-                px-4
-                justify-center
-                text-sm
-                whitespace-nowrap
-                flex-grow
-                min-w-0
-                md:flex-1
+                bg-gradient-to-br from-blue-50 via-white to-blue-100
+                backdrop-blur-xl border border-gray-200
+                shadow-md transition-all duration-300
+                px-4 justify-center text-sm whitespace-nowrap flex-grow min-w-0
               `}
+              style={{
+                boxShadow: "inset 0 0 25px rgba(59, 130, 246, 0.25)",
+                width: "100%", // ✅ make third button equal width on desktop
+              }}
             >
-              <span className="font-medium text-gray-800 text-sm">
+              <span className="font-medium text-gray-800 text-sm text-glow-effect">
                 {benefits[2].title}
               </span>
             </div>
