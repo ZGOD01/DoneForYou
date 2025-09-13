@@ -66,7 +66,11 @@ export default function TestimonialsMarquee() {
               <div className="flex justify-center text-yellow-500 mb-1">
                 {"★".repeat(5)}
               </div>
-              <p className="text-xs font-medium mb-3 text-black">"{t.text}"</p>
+              <p className="text-base font-medium mb-3 text-black">
+  "{t.text}"
+</p>
+
+
               <span className="inline-block bg-blue-100 text-blue-900 font-semibold px-3 py-1 rounded-full text-xs border border-blue-200">
                 {t.result}
               </span>
