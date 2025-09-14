@@ -1,38 +1,57 @@
 .marquee-wrapper {
   position: relative;
   width: 100%;
-  overflow-x: auto; /* allow manual horizontal scroll */
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-.marquee-wrapper::-webkit-scrollbar {
-  height: 6px; /* Show small scrollbar */
-}
-.marquee-wrapper::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 9999px;
-}
-.marquee-wrapper::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 .marquee-track {
   display: flex;
   gap: 1.5rem;
-  min-width: max-content; /* ensures horizontal scroll works */
-  animation: marquee-scroll 25s linear infinite;
 }
 
+/* Pause animation on hover */
 .marquee-track.paused {
   animation-play-state: paused;
 }
 
+/* Mobile-only: Apply continuous scrolling and manual scroll for screens up to 767px wide */
+@media (max-width: 767px) {
+  .marquee-wrapper {
+    overflow-x: auto; /* Enables manual horizontal scroll */
+    overflow-y: hidden;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+  }
+
+  .marquee-wrapper::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari */
+  }
+
+  .marquee-track {
+    /* The core change: applying the animation */
+    animation: marquee-scroll 15s linear infinite;
+    /* Ensure the track is wide enough for the duplicated content */
+    width: fit-content;
+  }
+}
+
+/* Desktop: Disable animation and center content for screens 768px and wider */
+@media (min-width: 768px) {
+  .marquee-wrapper {
+    overflow: hidden; /* Hide scrollbar on desktop */
+  }
+  .marquee-track {
+    animation: none;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
+
+/* Keyframe animation for continuous scrolling on mobile */
 @keyframes marquee-scroll {
   0% {
-    transform: translateX(50%);
+    transform: translateX(0%);
   }
+  /* The key for a seamless loop: move by exactly half the total track length. */
   100% {
     transform: translateX(-50%);
   }

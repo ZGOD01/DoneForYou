@@ -4,9 +4,11 @@ import snehaProtrait from "../assets/sneha-protrait.jpg";
 import sourav from "../assets/sourav.jpg";
 import prashant from "../assets/prashant.jpg";
 import sula from "../assets/sula.jpg";
+import useMediaQuery from "./useMediaQuery"; // Make sure to import the hook
 
 export default function TestimonialsMarquee() {
   const [isMarqueePaused, setIsMarqueePaused] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 767px)"); // Check for mobile screen size
 
   const testimonials = [
     {
@@ -46,8 +48,14 @@ export default function TestimonialsMarquee() {
       </div>
 
       {/* Testimonials Marquee */}
-      <div className="marquee-wrapper overflow-hidden mb-12">
-        <div className="marquee-track flex gap-6">
+      <div className="marquee-wrapper mb-12">
+        <div
+          className={`marquee-track flex gap-6 ${isMarqueePaused ? "paused" : ""
+            }`}
+          onMouseEnter={() => setIsMarqueePaused(true)}
+          onMouseLeave={() => setIsMarqueePaused(false)}
+        >
+          {/* Render the original list */}
           {testimonials.map((t, index) => (
             <div
               key={index}
@@ -57,35 +65,59 @@ export default function TestimonialsMarquee() {
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="w-20 h-20 mx-auto rounded-full object-cover mb-3" // Increased size here
+                  className="w-20 h-20 mx-auto rounded-full object-cover mb-3"
                 />
               ) : (
-                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-white to-blue-100 border border-gray-300 mb-3"></div> // Increased size here
+                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-white to-blue-100 border border-gray-300 mb-3"></div>
               )}
               <h3 className="text-base font-bold text-gray-800">{t.name}</h3>
               <div className="flex justify-center text-yellow-500 mb-1">
                 {"★".repeat(5)}
               </div>
-              <p className="text-base font-medium mb-3 text-black">
-  "{t.text}"
-</p>
-
-
+              <p className="text-base font-medium mb-3 text-black">"{t.text}"</p>
               <span className="inline-block bg-blue-100 text-blue-900 font-semibold px-3 py-1 rounded-full text-xs border border-blue-200">
                 {t.result}
               </span>
             </div>
           ))}
+          {/* Duplicate the list for seamless looping on mobile */}
+          {isMobile &&
+            testimonials.map((t, index) => (
+              <div
+                key={`duplicate-${index}`}
+                className="w-[220px] sm:w-[240px] md:w-[260px] bg-gradient-to-br from-blue-50 via-white to-blue-100 backdrop-blur-xl border border-gray-200 p-4 rounded-xl shadow-md text-center flex-shrink-0"
+              >
+                {t.image ? (
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    className="w-20 h-20 mx-auto rounded-full object-cover mb-3"
+                  />
+                ) : (
+                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-white to-blue-100 border border-gray-300 mb-3"></div>
+                )}
+                <h3 className="text-base font-bold text-gray-800">{t.name}</h3>
+                <div className="flex justify-center text-yellow-500 mb-1">
+                  {"★".repeat(5)}
+                </div>
+                <p className="text-base font-medium mb-3 text-black">"{t.text}"</p>
+                <span className="inline-block bg-blue-100 text-blue-900 font-semibold px-3 py-1 rounded-full text-xs border border-blue-200">
+                  {t.result}
+                </span>
+              </div>
+            ))}
         </div>
       </div>
 
       {/* Videos Marquee */}
-      <div className="marquee-wrapper overflow-hidden">
+      <div className="marquee-wrapper">
         <div
-          className={`marquee-track flex gap-6 ${isMarqueePaused ? "paused" : ""}`}
+          className={`marquee-track flex gap-6 ${isMarqueePaused ? "paused" : ""
+            }`}
           onMouseEnter={() => setIsMarqueePaused(true)}
           onMouseLeave={() => setIsMarqueePaused(false)}
         >
+          {/* Render the original videos */}
           <video
             className="w-[260px] sm:w-[300px] md:w-[300px] h-[300px] object-cover rounded-xl shadow-lg flex-shrink-0"
             controls
@@ -96,6 +128,21 @@ export default function TestimonialsMarquee() {
             controls
             src="/path-to-video2.mp4"
           />
+          {/* Duplicate the videos for seamless looping on mobile */}
+          {isMobile && (
+            <>
+              <video
+                className="w-[260px] sm:w-[300px] md:w-[300px] h-[300px] object-cover rounded-xl shadow-lg flex-shrink-0"
+                controls
+                src="/path-to-video1.mp4"
+              />
+              <video
+                className="w-[260px] sm:w-[300px] md:w-[300px] h-[300px] object-cover rounded-xl shadow-lg flex-shrink-0"
+                controls
+                src="/path-to-video2.mp4"
+              />
+            </>
+          )}
         </div>
       </div>
     </section>
