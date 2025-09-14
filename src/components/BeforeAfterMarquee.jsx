@@ -19,13 +19,15 @@ export default function BeforeAfterMarquee() {
 
         {/* ✅ Subheadline */}
         <p className="mt-4 text-gray-800 text-base md:text-lg font-medium">
-          This is the ultimate black-book of TOP 1% Fat Loss coaches (they won’t reveal it to you…)
+          This is the ultimate{" "}
+          <span className="bg-yellow-100 px-1 rounded">
+            black-book of TOP 1% Fat Loss coaches
+          </span>{" "}
+          (they won’t reveal it to you…)
         </p>
-
       </div>
 
       <PipelineBackground />
-
     </section>
   );
 }
