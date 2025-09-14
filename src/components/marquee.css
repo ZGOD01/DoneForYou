@@ -1,12 +1,27 @@
 .marquee-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto; /* allow manual horizontal scroll */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.marquee-wrapper::-webkit-scrollbar {
+  height: 6px; /* Show small scrollbar */
+}
+.marquee-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.marquee-wrapper::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .marquee-track {
   display: flex;
   gap: 1.5rem;
+  min-width: max-content; /* ensures horizontal scroll works */
   animation: marquee-scroll 25s linear infinite;
 }
 
@@ -16,9 +31,9 @@
 
 @keyframes marquee-scroll {
   0% {
-    transform: translateX(50%); 
+    transform: translateX(50%);
   }
   100% {
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
   }
 }
