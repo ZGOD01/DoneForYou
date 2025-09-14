@@ -11,19 +11,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-white text-black pt-14 pb-6 overflow-hidden">
+    <footer className="relative bg-white text-black pt-2 pb-6 md:pt-6 md:pb-20 overflow-hidden">
       {/* Blue Glow */}
       <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-blue-400/30 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 mt-6">
+      <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 mt-2 md:mt-6">
         {/* Left - Logo + Contact Us */}
         <div className="flex flex-col items-center md:items-start space-y-6">
           {/* Logo with click handler */}
-          <Link
-            to="/"
-            onClick={scrollToTop}
-            className="cursor-pointer"
-          >
+          <Link to="/" onClick={scrollToTop} className="cursor-pointer">
             <img
               src={logo}
               alt="Scale100Million Logo"
