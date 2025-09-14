@@ -18,9 +18,10 @@ export default function BeforeAfterMarquee() {
         </h2>
 
         {/* ✅ Subheadline */}
-        <p className="mt-4 text-gray-800 text-base md:text-lg font-medium whitespace-nowrap">
+        <p className="mt-4 text-gray-800 text-base md:text-lg font-medium">
           This is the ultimate black-book of TOP 1% Fat Loss coaches (they won’t reveal it to you…)
         </p>
+
       </div>
 
       <PipelineBackground />
