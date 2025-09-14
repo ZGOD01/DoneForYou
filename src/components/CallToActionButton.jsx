@@ -2,16 +2,16 @@ import { motion } from "framer-motion";
 
 export default function CallToActionButton() {
   const handleClick = (e) => {
-    // Prevent the default link behavior
+    // Prevent the default link behavior to handle it programmatically
     e.preventDefault();
 
-    // Check if the Zoho PageSense custom event tracker is available
-    if (window._vis_opt_goal_conversions) {
-      // Send the custom event with the exact name you used in Zoho
-      // In this example, 'cta_button_click'
-      window._vis_opt_goal_conversions.push(['cta_button_click']);
+    // Check if the Zoho PageSense object is loaded before pushing the event
+    if (window.pagesense) {
+      window.pagesense.push(['trackEvent', 'cta_button_click']);
+    } else {
+      console.error("Zoho PageSense not loaded. Unable to track custom event.");
     }
-
+    
     // Now, perform the original action: redirect the user to the home page
     window.location.href = "/";
   };
@@ -24,7 +24,7 @@ export default function CallToActionButton() {
       transition={{ duration: 0.5 }}
     >
       <motion.a
-        // Use the onClick handler instead of just href
+        // Call the handleClick function when the user clicks the button
         onClick={handleClick}
         className="relative w-full sm:max-w-md px-12 py-8 bg-red-600 text-white font-semibold 
           text-sm sm:text-base md:text-lg rounded-full shadow-lg overflow-hidden 
