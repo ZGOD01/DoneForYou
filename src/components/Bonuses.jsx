@@ -64,7 +64,7 @@ export default function Bonuses() {
   };
 
   return (
-    <section className="relative py-16 bg-white text-black overflow-hidden">
+    <section className="relative py-4 bg-white text-black overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-2 leading-tight">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">

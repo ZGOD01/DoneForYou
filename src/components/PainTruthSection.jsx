@@ -32,7 +32,7 @@ export default function PainTruthSection() {
   };
 
   return (
-    <section className="relative bg-white py-20 px-6">
+    <section className="relative bg-white py-10 px-6">
       {/* Container for the CTA button */}
       <div className="max-w-5xl mx-auto text-center mb-10">
         <CallToActionButton />

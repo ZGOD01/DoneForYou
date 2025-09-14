@@ -82,7 +82,7 @@ export default function PerfectForSection() {
   ];
 
   return (
-    <section className="bg-white py-16 px-6 relative overflow-hidden">
+    <section className="bg-white py-1 px-6 relative overflow-hidden">
       {/* 🟢 The CallToActionButton is now at the top of the section */}
       <div className="flex justify-center mb-12">
         <CallToActionButton />
